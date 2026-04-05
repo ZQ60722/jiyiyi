@@ -3,290 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广东农遗产国际传播调研问卷数据汇总</title>
-    <!-- 引入ECharts图表库 -->
+    <title>广东农业文化遗产国际传播与话语体系构建调研 - 统计分析</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <style>
-        /* 复刻问卷星经典蓝白配色与排版风格 */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-            color: #333;
-        }
-        .header {
-            background-color: #2b6cb0;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 500;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background: white;
-            padding: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-radius: 4px;
-        }
-        .stats-bar {
-            display: flex;
-            justify-content: space-around;
-            background: #f0f7ff;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            border: 1px solid #d6eaff;
-        }
-        .stats-item {
-            text-align: center;
-        }
-        .stats-num {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2b6cb0;
-        }
-        .stats-label {
-            font-size: 12px;
-            color: #666;
-        }
-        .question-block {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #eee;
-        }
-        .question-block:last-child {
-            border-bottom: none;
-        }
-        .q-title {
-            font-size: 15px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 4px solid #2b6cb0;
-        }
-        .chart-container {
-            width: 100%;
-            height: 350px;
-            margin-top: 10px;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            font-size: 13px;
-        }
-        .data-table th, .data-table td {
-            border: 1px solid #eaeaea;
-            padding: 10px;
-            text-align: left;
-        }
-        .data-table th {
-            background-color: #f8f8f8;
-            font-weight: normal;
-            color: #666;
-        }
-        .footer {
-            text-align: center;
-            color: #999;
-            font-size: 12px;
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
+        body { margin:0; padding:0; background:#f5f5f5; font-family:"Microsoft YaHei","PingFang SC",sans-serif; color:#333; }
+        .header { background:#2b6cb0; color:#fff; padding:20px 0; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,.1); }
+        .header h1 { margin:0; font-size:22px; font-weight:500; }
+        .container { max-width:1000px; margin:20px auto; background:#fff; padding:30px; box-shadow:0 2px 8px rgba(0,0,0,.05); border-radius:4px; }
+        .stats-bar { display:flex; justify-content:space-around; background:#f0f7ff; padding:15px; border-radius:4px; margin-bottom:30px; border:1px solid #d6eaff; }
+        .stats-item { text-align:center; }
+        .stats-num { font-size:24px; font-weight:bold; color:#2b6cb0; }
+        .stats-label { font-size:12px; color:#666; }
+        .q-block { margin-bottom:40px; padding-bottom:20px; border-bottom:1px dashed #eee; }
+        .q-block:last-child { border-bottom:none; }
+        .q-title { font-size:14px; font-weight:bold; color:#333; margin-bottom:15px; padding-left:10px; border-left:4px solid #2b6cb0; }
+        .q-tag { display:inline-block; font-size:11px; color:#fff; background:#ed8936; padding:2px 8px; border-radius:3px; margin-left:8px; vertical-align:middle; }
+        .q-tag.blue { background:#2b6cb0; }
+        .q-tag.gray { background:#999; }
+        .chart-box { width:100%; height:350px; margin-top:10px; }
+        .chart-box.h400 { height:400px; }
+        .dtable { width:100%; border-collapse:collapse; margin-top:15px; font-size:13px; }
+        .dtable th,.dtable td { border:1px solid #eaeaea; padding:10px; text-align:left; }
+        .dtable th { background:#f8f8f8; font-weight:normal; color:#666; width:60%; }
+        .dtable td:nth-child(2) { width:15%; text-align:center; }
+        .dtable td:nth-child(3) { width:25%; text-align:right; }
+        .footer { text-align:center; color:#999; font-size:12px; margin:20px 0 30px; }
+        .highlight { color:#e53e3e; font-weight:bold; }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <h1>广东农业文化遗产国际传播与话语体系构建调研 - 统计分析</h1>
+<div class="header">
+    <h1>广东农业文化遗产国际传播与话语体系构建调研 - 统计分析</h1>
+</div>
+<div class="container">
+    <div class="stats-bar">
+        <div class="stats-item"><div class="stats-num">137</div><div class="stats-label">回收总量</div></div>
+        <div class="stats-item"><div class="stats-num">137</div><div class="stats-label">有效答卷</div></div>
+        <div class="stats-item"><div class="stats-num">15题</div><div class="stats-label">题目数量</div></div>
+        <div class="stats-item"><div class="stats-num">约5分钟</div><div class="stats-label">平均用时</div></div>
     </div>
 
-    <div class="container">
-        <!-- 顶部基本统计 -->
-        <div class="stats-bar">
-            <div class="stats-item">
-                <div class="stats-num">137</div>
-                <div class="stats-label">回收总量</div>
-            </div>
-            <div class="stats-item">
-                <div class="stats-num">137</div>
-                <div class="stats-label">有效答卷</div>
-            </div>
-            <div class="stats-item">
-                <div class="stats-num">15题</div>
-                <div class="stats-label">题目数量</div>
-            </div>
-            <div class="stats-item">
-                <div class="stats-num">约5分钟</div>
-                <div class="stats-label">平均用时</div>
-            </div>
-        </div>
-
-        <!-- 第一题：身份 -->
-        <div class="question-block">
-            <div class="q-title">第1题：您的身份是？[单选题]</div>
-            <div id="chart1" class="chart-container"></div>
-            <table class="data-table">
-                <tr><th>选项</th><th>小计</th><th>比例</th></tr>
-                <tr><td>高校研究者/学生</td><td>45</td><td>32.85%</td></tr>
-                <tr><td>国内游客/消费者</td><td>25</td><td>18.25%</td></tr>
-                <tr><td>农遗从业者/管理部门</td><td>20</td><td>14.60%</td></tr>
-                <tr><td>文旅从业者</td><td>18</td><td>13.14%</td></tr>
-                <tr><td>媒体/翻译从业者</td><td>17</td><td>12.41%</td></tr>
-                <tr><td>国际访客/外籍人士</td><td>12</td><td>8.76%</td></tr>
-            </table>
-        </div>
-
-        <!-- 第二题：了解程度 -->
-        <div class="question-block">
-            <div class="q-title">第2题：您对广东农业文化遗产的了解程度是？[单选题]</div>
-            <div id="chart2" class="chart-container"></div>
-        </div>
-
-        <!-- 第三题：术语混乱 -->
-        <div class="question-block">
-            <div class="q-title">第3题：您是否遇到过"同一农遗术语有不同英文翻译"的情况？[单选题]</div>
-            <div id="chart3" class="chart-container"></div>
-        </div>
-
-        <!-- 第四题：亟需标准 -->
-        <div class="question-block">
-            <div class="q-title">第4题（核心）：您是否认为亟需建立广东农遗统一双语术语标准？[单选题]</div>
-            <div id="chart4" class="chart-container"></div>
-        </div>
-
-        <!-- 第五题：传播痛点（多选） -->
-        <div class="question-block">
-            <div class="q-title">第5题：当前对外传播主要存在哪些问题？[多选题，限选3项]</div>
-            <div id="chart5" class="chart-container" style="height: 400px;"></div>
-        </div>
-
-        <!-- 第六题：当前话语方式 -->
-        <div class="question-block">
-            <div class="q-title">第6题：您认为当前广东农遗国际传播的话语方式主要是？[单选题]</div>
-            <div id="chart6" class="chart-container"></div>
-        </div>
-
-        <!-- 第七题：数字化体验 -->
-        <div class="question-block">
-            <div class="q-title">第7题：您是否体验过与农业文化遗产相关的数字化产品？[单选题]</div>
-            <div id="chart7" class="chart-container"></div>
-        </div>
-
-        <!-- 第八题：提升手段（多选） -->
-        <div class="question-block">
-            <div class="q-title">第8题：哪些手段最能提升农遗的跨文化传播效果？[多选题，限选2项]</div>
-            <div id="chart8" class="chart-container" style="height: 400px;"></div>
-        </div>
-
+    <!-- Q1 身份 -->
+    <div class="q-block">
+        <div class="q-title">第1题：您的身份是？<span class="q-tag blue">单选题</span></div>
+        <div id="c1" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 高校研究者/学生</td><td>45</td><td>32.85%</td></tr>
+        <tr><td>B. 农遗从业者/管理部门</td><td>20</td><td>14.60%</td></tr>
+        <tr><td>C. 文旅从业者</td><td>18</td><td>13.14%</td></tr>
+        <tr><td>D. 国内游客/消费者</td><td>25</td><td>18.25%</td></tr>
+        <tr><td>E. 国际访客/外籍人士（包括留学生）</td><td>12</td><td>8.76%</td></tr>
+        <tr><td>F. 媒体/翻译从业者</td><td>17</td><td>12.41%</td></tr></table>
     </div>
 
-    <div class="footer">
-        本数据报告由系统自动生成 | 数据采集时间：近期 | 有效样本量：137
+    <!-- Q2 地区 -->
+    <div class="q-block">
+        <div class="q-title">第2题：您所在的地区是？<span class="q-tag blue">单选题</span></div>
+        <div id="c2" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 广东省内农业文化遗产地</td><td>32</td><td>23.36%</td></tr>
+        <tr><td>B. 广东省内非农业文化遗产地</td><td>38</td><td>27.74%</td></tr>
+        <tr><td>C. 国内非广东省地区</td><td>51</td><td>37.23%</td></tr>
+        <tr><td>D. 国外</td><td>16</td><td>11.68%</td></tr></table>
     </div>
 
-    <script>
-        // 基于提供的Excel精确统计的数据
-        var data = {
-            q2: [{name:'了解部分', value:59}, {name:'系统了解', value:36}, {name:'专业研究', value:19}, {name:'听说过不了解细节', value:18}, {name:'完全不了解', value:5}],
-            q3: [{name:'偶尔遇到(1-4次)', value:54}, {name:'经常遇到(5次+)', value:38}, {name:'没注意过', value:29}, {name:'从未遇到', value:16}],
-            q4: [{name:'非常迫切', value:81}, {name:'比较需要', value:41}, {name:'不太需要', value:12}, {name:'完全没必要', value:3}],
-            q5: [{name:'翻译生硬', value:82}, {name:'渠道太少', value:80}, {name:'缺乏深度', value:65}, {name:'形式单一', value:59}, {name:'没有问题', value:5}],
-            q6: [{name:'学术话语', value:39}, {name:'官方话语', value:34}, {name:'碎片化无体系', value:32}, {name:'文化话语', value:32}],
-            q7: [{name:'听说过没体验', value:50}, {name:'比较粗糙', value:36}, {name:'没听说过', value:31}, {name:'体验好', value:20}],
-            q8: [{name:'双语短视频', value:62}, {name:'术语语料库', value:46}, {name:'多语种VR/AR', value:28}, {name:'AI智能导览', value:25}, {name:'电商直播', value:22}, {name:'社交话题挑战赛', value:19}]
-        };
+    <!-- Q3 了解程度 -->
+    <div class="q-block">
+        <div class="q-title">第3题：您对广东农业文化遗产的了解程度是？<span class="q-tag blue">单选题</span></div>
+        <div id="c3" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 完全不了解</td><td>10</td><td>7.30%</td></tr>
+        <tr><td>B. 听说过，不了解细节</td><td>21</td><td>15.33%</td></tr>
+        <tr><td>C. 了解部分（荔枝/单丛等）</td><td>52</td><td>37.96%</td></tr>
+        <tr><td>D. 系统了解，长期关注</td><td>34</td><td>24.82%</td></tr>
+        <tr><td>E. 专业研究</td><td>20</td><td>14.60%</td></tr></table>
+    </div>
 
-        // 通用配色（复刻问卷星蓝橙风格）
-        var colorList = ['#2b6cb0', '#ed8936', '#48bb78', '#e53e3e', '#9f7aea', '#38b2ac'];
+    <!-- Q4 术语混乱 -->
+    <div class="q-block">
+        <div class="q-title">第4题：您是否遇到过"同一农遗术语有不同英文翻译"的情况？<span class="q-tag blue">单选题</span></div>
+        <div id="c4" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 经常遇到（5次以上）</td><td>34</td><td>24.82%</td></tr>
+        <tr><td>B. 偶尔遇到（1-4次）</td><td>52</td><td>37.96%</td></tr>
+        <tr><td>C. 没注意过</td><td>22</td><td>16.06%</td></tr>
+        <tr><td>D. 从未遇到</td><td>29</td><td>21.17%</td></tr></table>
+    </div>
 
-        // 初始化图表的通用配置
-        function initChart(domId, type, chartData, isHorizontal) {
-            var myChart = echarts.init(document.getElementById(domId));
-            var option = {
-                tooltip: { trigger: 'item', formatter: '{a} <br/>{b}: {c} ({d}%)' },
-                legend: { orient: 'vertical', left: 'left', top: 'middle' },
-                color: colorList,
-                series: [{
-                    name: '答题分布',
-                    type: type,
-                    radius: ['40%', '70%'], // 环形图设置
-                    avoidLabelOverlap: false,
-                    label: { show: false, position: 'center' },
-                    emphasis: {
-                        label: { show: true, fontSize: '16', fontWeight: 'bold' }
-                    },
-                    labelLine: { show: false },
-                    data: chartData
-                }]
-            };
-            
-            // 如果是横向条形图（用于多选题）
-            if (isHorizontal) {
-                option.grid = { left: '3%', right: '4%', bottom: '3%', containLabel: true };
-                option.xAxis = { type: 'value', boundaryGap: [0, 0.01] };
-                option.yAxis = { 
-                    type: 'category', 
-                    data: chartData.map(function(item){return item.name}).reverse(),
-                    axisLabel: { width: 120, overflow: 'break' }
-                };
-                option.legend = undefined;
-                option.tooltip = { trigger: 'axis', axisPointer: { type: 'shadow' } };
-                option.series = [{
-                    type: 'bar',
-                    data: chartData.map(function(item){return item.value}).reverse(),
-                    itemStyle: { color: '#2b6cb0', borderRadius: [0, 4, 4, 0] },
-                    label: { show: true, position: 'right', formatter: '{c}' }
-                }];
-                option.radius = undefined;
-            }
-            myChart.setOption(option);
-        }
+    <!-- Q5 官方术语表 -->
+    <div class="q-block">
+        <div class="q-title">第5题：您是否了解或使用过官方发布的农业文化遗产双语术语表？<span class="q-tag blue">单选题</span></div>
+        <div id="c5" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 了解且经常使用</td><td>14</td><td>10.22%</td></tr>
+        <tr><td>B. 听说过但没见过</td><td>44</td><td>32.12%</td></tr>
+        <tr><td>C. 完全不了解</td><td>79</td><td>57.66%</td></tr></table>
+    </div>
 
-        // 渲染所有图表
-        // Q1 身份（单独配置，因为数据结构直接写死在HTML表格了）
-        var chart1 = echarts.init(document.getElementById('chart1'));
-        chart1.setOption({
-            tooltip: { trigger: 'item' },
-            color: colorList,
-            series: [{
-                type: 'pie',
-                radius: '65%',
-                data: [{name:'高校研究者/学生', value:45}, {name:'国内游客/消费者', value:25}, {name:'农遗从业者/管理部门', value:20}, {name:'文旅从业者', value:18}, {name:'媒体/翻译从业者', value:17}, {name:'国际访客/外籍人士', value:12}],
-                label: { formatter: '{b}\n{d}%' }
-            }]
-        });
+    <!-- Q6 桑基鱼塘翻译（外籍专属） -->
+    <div class="q-block">
+        <div class="q-title">第6题：当您看到"Mulberry Fish Pond"这个翻译时，您能理解其文化内涵吗？<span class="q-tag gray">仅国际访客/外籍人士作答</span></div>
+        <div id="c6" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 完全理解，形象生动</td><td>2</td><td>16.67%</td></tr>
+        <tr><td>B. 部分理解，知道是养鱼和种桑</td><td>6</td><td>50.00%</td></tr>
+        <tr><td>C. 不理解，感觉很奇怪</td><td>4</td><td>33.33%</td></tr></table>
+        <div style="font-size:12px;color:#999;margin-top:8px;">* 本题有效作答12人（仅外籍人士作答）</div>
+    </div>
 
-        // Q2-Q7 单选环形图渲染
-        initChart('chart2', 'pie', data.q2);
-        initChart('chart3', 'pie', data.q3);
-        initChart('chart4', 'pie', data.q4);
-        
-        // Q5 多选条形图渲染
-        initChart('chart5', 'bar', data.q5, true);
-        
-        // Q6 话语方式
-        initChart('chart6', 'pie', data.q6);
-        
-        // Q7 数字化体验
-        initChart('chart7', 'pie', data.q7);
+    <!-- Q7 了解渠道 -->
+    <div class="q-block">
+        <div class="q-title">第7题：您主要通过哪些渠道了解广东农业文化遗产？<span class="q-tag">多选题</span></div>
+        <div id="c7" class="chart-box h400"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 短视频平台/社交媒体</td><td>55</td><td>40.15%</td></tr>
+        <tr><td>B. 学术期刊论文/书籍</td><td>65</td><td>47.45%</td></tr>
+        <tr><td>C. 新闻报道/纪录片</td><td>77</td><td>56.20%</td></tr>
+        <tr><td>D. 旅游宣传册/景区导览</td><td>46</td><td>33.58%</td></tr>
+        <tr><td>E. 朋友/他人介绍</td><td>59</td><td>43.07%</td></tr>
+        <tr><td>F. 从未接触过</td><td>0</td><td>0.00%</td></tr></table>
+    </div>
 
-        // Q8 多选条形图渲染
-        initChart('chart8', 'bar', data.q8, true);
+    <!-- Q8 传播痛点 -->
+    <div class="q-block">
+        <div class="q-title">第8题：您认为当前广东农业文化遗产的对外传播主要存在哪些问题？<span class="q-tag">多选题，限选3项</span></div>
+        <div id="c8" class="chart-box h400"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 只展示风景美食，缺乏深度</td><td>64</td><td>46.72%</td></tr>
+        <tr><td class="highlight">B. 翻译生硬/过于学术化，外国人看不懂</td><td>86</td><td>62.77%</td></tr>
+        <tr><td>C. 形式单一，吸引力不足</td><td>74</td><td>54.01%</td></tr>
+        <tr><td class="highlight">D. 渠道太少，国外平台看不到</td><td>84</td><td>61.31%</td></tr>
+        <tr><td>E. 没有问题</td><td>4</td><td>2.92%</td></tr></table>
+    </div>
 
-        // 窗口大小改变时，图表自适应
-        window.addEventListener('resize', function() {
-            for(var i=1; i<=8; i++) {
-                echarts.getInstanceByDom(document.getElementById('chart'+i)).resize();
-            }
-        });
-    </script>
+    <!-- Q9 国外社媒（外籍专属） -->
+    <div class="q-block">
+        <div class="q-title">第9题：您是否曾在国外社交媒体上看到过广东农业文化遗产的内容？<span class="q-tag gray">仅国际访客/外籍人士作答</span></div>
+        <div id="c9" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 经常看到</td><td>1</td><td>8.33%</td></tr>
+        <tr><td>B. 偶尔看到</td><td>2</td><td>16.67%</td></tr>
+        <tr><td>C. 从未看到</td><td>6</td><td>50.00%</td></tr>
+        <tr><td>D. 想搜索但不知道关键词</td><td>3</td><td>25.00%</td></tr></table>
+        <div style="font-size:12px;color:#999;margin-top:8px;">* 本题有效作答12人（仅外籍人士作答）</div>
+    </div>
+
+    <!-- Q10 亟需术语标准 -->
+    <div class="q-block">
+        <div class="q-title">第10题：您是否认为亟需建立广东农遗统一双语术语标准？<span class="q-tag blue">单选题</span></div>
+        <div id="c10" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>完全没必要</td><td>1</td><td>0.73%</td></tr>
+        <tr><td>不太需要</td><td>3</td><td>2.19%</td></tr>
+        <tr><td>比较需要</td><td>45</td><td>32.85%</td></tr>
+        <tr><td class="highlight">非常迫切</td><td>88</td><td>64.23%</td></tr></table>
+    </div>
+
+    <!-- Q11 数字化体验 -->
+    <div class="q-block">
+        <div class="q-title">第11题：您是否体验过与农业文化遗产相关的数字化产品？<span class="q-tag blue">单选题</span></div>
+        <div id="c11" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 体验过，且体验很好</td><td>14</td><td>10.22%</td></tr>
+        <tr><td>B. 体验过，但比较粗糙</td><td>40</td><td>29.20%</td></tr>
+        <tr><td>C. 听说过，没体验过</td><td>48</td><td>35.04%</td></tr>
+        <tr><td>D. 完全没听说过</td><td>35</td><td>25.55%</td></tr></table>
+    </div>
+
+    <!-- Q12 提升手段 -->
+    <div class="q-block">
+        <div class="q-title">第12题：您认为以下哪些手段最能提升农遗的跨文化传播效果？<span class="q-tag">多选题，限选2项</span></div>
+        <div id="c12" class="chart-box h400"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 多语种VR/AR沉浸式体验</td><td>35</td><td>25.55%</td></tr>
+        <tr><td>B. 农遗知识双语短视频</td><td>59</td><td>43.07%</td></tr>
+        <tr><td>C. 农遗术语在线语料库</td><td>48</td><td>35.04%</td></tr>
+        <tr><td>D. AI智能导览与翻译</td><td>40</td><td>29.20%</td></tr>
+        <tr><td>E. 国际社交媒体话题挑战赛</td><td>27</td><td>19.71%</td></tr>
+        <tr><td>F. 电商直播（双语）</td><td>25</td><td>18.25%</td></tr></table>
+    </div>
+
+    <!-- Q13 短视频意愿 -->
+    <div class="q-block">
+        <div class="q-title">第13题：您是否愿意通过短视频或直播平台了解或分享广东农遗文化？<span class="q-tag blue">单选题</span></div>
+        <div id="c13" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 非常愿意</td><td>54</td><td>39.42%</td></tr>
+        <tr><td>B. 一般</td><td>59</td><td>43.07%</td></tr>
+        <tr><td>C. 没兴趣</td><td>24</td><td>17.52%</td></tr></table>
+    </div>
+
+    <!-- Q14 当前话语方式 -->
+    <div class="q-block">
+        <div class="q-title">第14题：您认为当前广东农遗国际传播的话语方式主要是？<span class="q-tag blue">单选题</span></div>
+        <div id="c14" class="chart-box"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>学术话语（技术/保护）</td><td>34</td><td>24.82%</td></tr>
+        <tr><td>官方话语（成就/政策）</td><td>36</td><td>26.28%</td></tr>
+        <tr><td>文化话语（历史/人文）</td><td>38</td><td>27.74%</td></tr>
+        <tr><td>碎片化、浅层化、无体系</td><td>29</td><td>21.17%</td></tr></table>
+    </div>
+
+    <!-- Q15 故事关键词 -->
+    <div class="q-block">
+        <div class="q-title">第15题：您认为讲好广东农遗故事的关键词是？<span class="q-tag">多选题，限选2项</span></div>
+        <div id="c15" class="chart-box h400"></div>
+        <table class="dtable"><tr><th>选项</th><th>小计</th><th>比例</th></tr>
+        <tr><td>A. 人与自然和谐共生（生态智慧）</td><td>52</td><td>37.96%</td></tr>
+        <tr><td>B. 农业文化传承（历史厚度）</td><td>51</td><td>37.23%</td></tr>
+        <tr><td>C. 农民的匠心与生活（人文故事/美食文化）</td><td>59</td><td>43.07%</td></tr>
+        <tr><td>D. 科技创新与现代应用</td><td>19</td><td>13.87%</td></tr>
+        <tr><td>E. 全球重要性（与世界农业遗产关联）</td><td>43</td><td>31.39%</td></tr></table>
+    </div>
+
+</div>
+<div class="footer">本数据报告由系统自动生成 | 数据采集时间：近期 | 有效样本量：137</div>
+
+<script>
+var C = ['#2b6cb0','#ed8936','#48bb78','#e53e3e','#9f7aea','#38b2ac'];
+
+function pie(id, d) {
+    var c = echarts.init(document.getElementById(id));
+    c.setOption({
+        tooltip:{trigger:'item',formatter:'{b}: {c} ({d}%)'},
+        legend:{orient:'vertical',left:'left',top:'middle',textStyle:{fontSize:12}},
+        color:C, series:[{type:'pie',radius:['40%','70%'],label:{show:false},
+        emphasis:{label:{show:true,fontSize:'14',fontWeight:'bold'}},labelLine:{show:false},data:d}]
+    });
+}
+
+function bar(id, names, vals) {
+    var c = echarts.init(document.getElementById(id));
+    var sorted = names.map(function(n,i){return {name:n,value:vals[i]};});
+    sorted.sort(function(a,b){return a.value-b.value;});
+    c.setOption({
+        tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+        grid:{left:'3%',right:'8%',bottom:'3%',containLabel:true},
+        xAxis:{type:'value'},
+        yAxis:{type:'category',data:sorted.map(function(s){return s.name;}),axisLabel:{width:200,overflow:'break'}},
+        series:[{type:'bar',data:sorted.map(function(s){return s.value;}),
+            itemStyle:{color:'#2b6cb0',borderRadius:[0,4,4,0]},
+            label:{show:true,position:'right',formatter:function(p){return p.value;}}}]
+    });
+}
+
+pie('c1',[{name:'A. 高校研究者/学生',value:45},{name:'B. 农遗从业者/管理部门',value:20},{name:'C. 文旅从业者',value:18},{name:'D. 国内游客/消费者',value:25},{name:'E. 国际访客/外籍人士',value:12},{name:'F. 媒体/翻译从业者',value:17}]);
+pie('c2',[{name:'A. 广东省内遗产地',value:32},{name:'B. 广东省内非遗产地',value:38},{name:'C. 国内非广东省',value:51},{name:'D. 国外',value:16}]);
+pie('c3',[{name:'A. 完全不了解',value:10},{name:'B. 听说过不了解细节',value:21},{name:'C. 了解部分',value:52},{name:'D. 系统了解',value:34},{name:'E. 专业研究',value:20}]);
+pie('c4',[{name:'A. 经常遇到(5次+)',value:34},{name:'B. 偶尔遇到(1-4次)',value:52},{name:'C. 没注意过',value:22},{name:'D. 从未遇到',value:29}]);
+pie('c5',[{name:'A. 了解且经常使用',value:14},{name:'B. 听说过但没见过',value:44},{name:'C. 完全不了解',value:79}]);
+pie('c6',[{name:'A. 完全理解',value:2},{name:'B. 部分理解',value:6},{name:'C. 不理解',value:4}]);
+bar('c7',['A. 短视频/社交媒体','B. 学术期刊论文','C. 新闻报道/纪录片','D. 旅游宣传册/景区导览','E. 朋友/他人介绍','F. 从未接触过'],[55,65,77,46,59,0]);
+bar('c8',['A. 缺乏深度','B. 翻译生硬','C. 形式单一','D. 渠道太少','E. 没有问题'],[64,86,74,84,4]);
+pie('c9',[{name:'A. 经常看到',value:1},{name:'B. 偶尔看到',value:2},{name:'C. 从未看到',value:6},{name:'D. 想搜索不知关键词',value:3}]);
+pie('c10',[{name:'完全没必要',value:1},{name:'不太需要',value:3},{name:'比较需要',value:45},{name:'非常迫切',value:88}]);
+pie('c11',[{name:'A. 体验好',value:14},{name:'B. 比较粗糙',value:40},{name:'C. 听说过没体验',value:48},{name:'D. 完全没听说过',value:35}]);
+bar('c12',['A. 多语种VR/AR','B. 双语短视频','C. 术语语料库','D. AI智能导览','E. 社交话题挑战赛','F. 电商直播'],[35,59,48,40,27,25]);
+pie('c13',[{name:'A. 非常愿意',value:54},{name:'B. 一般',value:59},{name:'C. 没兴趣',value:24}]);
+pie('c14',[{name:'学术话语(技术/保护)',value:34},{name:'官方话语(成就/政策)',value:36},{name:'文化话语(历史/人文)',value:38},{name:'碎片化、浅层化、无体系',value:29}]);
+bar('c15',['A. 生态智慧','B. 历史传承','C. 人文故事','D. 科技创新','E. 全球重要性'],[52,51,59,19,43]);
+
+window.addEventListener('resize',function(){
+    for(var i=1;i<=15;i++){
+        var el=document.getElementById('c'+i);
+        if(el) echarts.getInstanceByDom(el).resize();
+    }
+});
+</script>
 </body>
 </html>
