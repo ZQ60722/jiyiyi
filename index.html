@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广东农遗产国际传播调研问卷数据汇总</title>
+    <!-- 引入ECharts图表库 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        /* 复刻问卷星经典蓝白配色与排版风格 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            color: #333;
+        }
+        .header {
+            background-color: #2b6cb0;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            border: 1px solid #d6eaff;
+        }
+        .stats-item {
+            text-align: center;
+        }
+        .stats-num {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .stats-label {
+            font-size: 12px;
+            color: #666;
+        }
+        .question-block {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #eee;
+        }
+        .question-block:last-child {
+            border-bottom: none;
+        }
+        .q-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #2b6cb0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 350px;
+            margin-top: 10px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #eaeaea;
+            padding: 10px;
+            text-align: left;
+        }
+        .data-table th {
+            background-color: #f8f8f8;
+            font-weight: normal;
+            color: #666;
+        }
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>广东农业文化遗产国际传播与话语体系构建调研 - 统计分析</h1>
+    </div>
+
+    <div class="container">
+        <!-- 顶部基本统计 -->
+        <div class="stats-bar">
+            <div class="stats-item">
+                <div class="stats-num">137</div>
+                <div class="stats-label">回收总量</div>
+            </div>
+            <div class="stats-item">
+                <div class="stats-num">137</div>
+                <div class="stats-label">有效答卷</div>
+            </div>
+            <div class="stats-item">
+                <div class="stats-num">15题</div>
+                <div class="stats-label">题目数量</div>
+            </div>
+            <div class="stats-item">
+                <div class="stats-num">约5分钟</div>
+                <div class="stats-label">平均用时</div>
+            </div>
+        </div>
+
+        <!-- 第一题：身份 -->
+        <div class="question-block">
+            <div class="q-title">第1题：您的身份是？[单选题]</div>
+            <div id="chart1" class="chart-container"></div>
+            <table class="data-table">
+                <tr><th>选项</th><th>小计</th><th>比例</th></tr>
+                <tr><td>高校研究者/学生</td><td>45</td><td>32.85%</td></tr>
+                <tr><td>国内游客/消费者</td><td>25</td><td>18.25%</td></tr>
+                <tr><td>农遗从业者/管理部门</td><td>20</td><td>14.60%</td></tr>
+                <tr><td>文旅从业者</td><td>18</td><td>13.14%</td></tr>
+                <tr><td>媒体/翻译从业者</td><td>17</td><td>12.41%</td></tr>
+                <tr><td>国际访客/外籍人士</td><td>12</td><td>8.76%</td></tr>
+            </table>
+        </div>
+
+        <!-- 第二题：了解程度 -->
+        <div class="question-block">
+            <div class="q-title">第2题：您对广东农业文化遗产的了解程度是？[单选题]</div>
+            <div id="chart2" class="chart-container"></div>
+        </div>
+
+        <!-- 第三题：术语混乱 -->
+        <div class="question-block">
+            <div class="q-title">第3题：您是否遇到过"同一农遗术语有不同英文翻译"的情况？[单选题]</div>
+            <div id="chart3" class="chart-container"></div>
+        </div>
+
+        <!-- 第四题：亟需标准 -->
+        <div class="question-block">
+            <div class="q-title">第4题（核心）：您是否认为亟需建立广东农遗统一双语术语标准？[单选题]</div>
+            <div id="chart4" class="chart-container"></div>
+        </div>
+
+        <!-- 第五题：传播痛点（多选） -->
+        <div class="question-block">
+            <div class="q-title">第5题：当前对外传播主要存在哪些问题？[多选题，限选3项]</div>
+            <div id="chart5" class="chart-container" style="height: 400px;"></div>
+        </div>
+
+        <!-- 第六题：当前话语方式 -->
+        <div class="question-block">
+            <div class="q-title">第6题：您认为当前广东农遗国际传播的话语方式主要是？[单选题]</div>
+            <div id="chart6" class="chart-container"></div>
+        </div>
+
+        <!-- 第七题：数字化体验 -->
+        <div class="question-block">
+            <div class="q-title">第7题：您是否体验过与农业文化遗产相关的数字化产品？[单选题]</div>
+            <div id="chart7" class="chart-container"></div>
+        </div>
+
+        <!-- 第八题：提升手段（多选） -->
+        <div class="question-block">
+            <div class="q-title">第8题：哪些手段最能提升农遗的跨文化传播效果？[多选题，限选2项]</div>
+            <div id="chart8" class="chart-container" style="height: 400px;"></div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        本数据报告由系统自动生成 | 数据采集时间：近期 | 有效样本量：137
+    </div>
+
+    <script>
+        // 基于提供的Excel精确统计的数据
+        var data = {
+            q2: [{name:'了解部分', value:59}, {name:'系统了解', value:36}, {name:'专业研究', value:19}, {name:'听说过不了解细节', value:18}, {name:'完全不了解', value:5}],
+            q3: [{name:'偶尔遇到(1-4次)', value:54}, {name:'经常遇到(5次+)', value:38}, {name:'没注意过', value:29}, {name:'从未遇到', value:16}],
+            q4: [{name:'非常迫切', value:81}, {name:'比较需要', value:41}, {name:'不太需要', value:12}, {name:'完全没必要', value:3}],
+            q5: [{name:'翻译生硬', value:82}, {name:'渠道太少', value:80}, {name:'缺乏深度', value:65}, {name:'形式单一', value:59}, {name:'没有问题', value:5}],
+            q6: [{name:'学术话语', value:39}, {name:'官方话语', value:34}, {name:'碎片化无体系', value:32}, {name:'文化话语', value:32}],
+            q7: [{name:'听说过没体验', value:50}, {name:'比较粗糙', value:36}, {name:'没听说过', value:31}, {name:'体验好', value:20}],
+            q8: [{name:'双语短视频', value:62}, {name:'术语语料库', value:46}, {name:'多语种VR/AR', value:28}, {name:'AI智能导览', value:25}, {name:'电商直播', value:22}, {name:'社交话题挑战赛', value:19}]
+        };
+
+        // 通用配色（复刻问卷星蓝橙风格）
+        var colorList = ['#2b6cb0', '#ed8936', '#48bb78', '#e53e3e', '#9f7aea', '#38b2ac'];
+
+        // 初始化图表的通用配置
+        function initChart(domId, type, chartData, isHorizontal) {
+            var myChart = echarts.init(document.getElementById(domId));
+            var option = {
+                tooltip: { trigger: 'item', formatter: '{a} <br/>{b}: {c} ({d}%)' },
+                legend: { orient: 'vertical', left: 'left', top: 'middle' },
+                color: colorList,
+                series: [{
+                    name: '答题分布',
+                    type: type,
+                    radius: ['40%', '70%'], // 环形图设置
+                    avoidLabelOverlap: false,
+                    label: { show: false, position: 'center' },
+                    emphasis: {
+                        label: { show: true, fontSize: '16', fontWeight: 'bold' }
+                    },
+                    labelLine: { show: false },
+                    data: chartData
+                }]
+            };
+            
+            // 如果是横向条形图（用于多选题）
+            if (isHorizontal) {
+                option.grid = { left: '3%', right: '4%', bottom: '3%', containLabel: true };
+                option.xAxis = { type: 'value', boundaryGap: [0, 0.01] };
+                option.yAxis = { 
+                    type: 'category', 
+                    data: chartData.map(function(item){return item.name}).reverse(),
+                    axisLabel: { width: 120, overflow: 'break' }
+                };
+                option.legend = undefined;
+                option.tooltip = { trigger: 'axis', axisPointer: { type: 'shadow' } };
+                option.series = [{
+                    type: 'bar',
+                    data: chartData.map(function(item){return item.value}).reverse(),
+                    itemStyle: { color: '#2b6cb0', borderRadius: [0, 4, 4, 0] },
+                    label: { show: true, position: 'right', formatter: '{c}' }
+                }];
+                option.radius = undefined;
+            }
+            myChart.setOption(option);
+        }
+
+        // 渲染所有图表
+        // Q1 身份（单独配置，因为数据结构直接写死在HTML表格了）
+        var chart1 = echarts.init(document.getElementById('chart1'));
+        chart1.setOption({
+            tooltip: { trigger: 'item' },
+            color: colorList,
+            series: [{
+                type: 'pie',
+                radius: '65%',
+                data: [{name:'高校研究者/学生', value:45}, {name:'国内游客/消费者', value:25}, {name:'农遗从业者/管理部门', value:20}, {name:'文旅从业者', value:18}, {name:'媒体/翻译从业者', value:17}, {name:'国际访客/外籍人士', value:12}],
+                label: { formatter: '{b}\n{d}%' }
+            }]
+        });
+
+        // Q2-Q7 单选环形图渲染
+        initChart('chart2', 'pie', data.q2);
+        initChart('chart3', 'pie', data.q3);
+        initChart('chart4', 'pie', data.q4);
+        
+        // Q5 多选条形图渲染
+        initChart('chart5', 'bar', data.q5, true);
+        
+        // Q6 话语方式
+        initChart('chart6', 'pie', data.q6);
+        
+        // Q7 数字化体验
+        initChart('chart7', 'pie', data.q7);
+
+        // Q8 多选条形图渲染
+        initChart('chart8', 'bar', data.q8, true);
+
+        // 窗口大小改变时，图表自适应
+        window.addEventListener('resize', function() {
+            for(var i=1; i<=8; i++) {
+                echarts.getInstanceByDom(document.getElementById('chart'+i)).resize();
+            }
+        });
+    </script>
+</body>
+</html>
